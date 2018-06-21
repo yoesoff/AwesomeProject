@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, Image as Gambar } from 'react-native';
+import { AppRegistry, Text, View, Image as Gambar, StyleSheet } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Blink extends Component {
   render() {
     let display = this.state.isShowingText ? this.props.text : ' ';
     return (
-      <Text>{display}</Text>
+      <Text style={gayamu.bigblue}>{display}</Text>
     );
   }
 }
@@ -49,7 +49,7 @@ class Greeting extends Component {
   render() {
     name = this.props.name + " Xioumi " + this.state.firstInput;
     return (
-      <Text>Hellou {name} {this.props.age} !</Text>
+      <Text style={gayamu.red}>Hellou {name} {this.props.age} !</Text>
     );
   }
 }
@@ -71,6 +71,18 @@ export default class LotsOfGreetings extends Component {
     );
   }
 }
+
+
+const gayamu = StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
 
 // skip this line if using Create React Native App
 //AppRegistry.registerComponent('AwesomeProject', () => LotsOfGreetings);
