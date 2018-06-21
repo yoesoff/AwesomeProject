@@ -31,9 +31,25 @@ class Psg extends Component {
 }
 
 class Greeting extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstInput: 1,
+    }
+
+    setInterval(() => {
+      this.setState(previousState => {
+        return { firstInput: this.state.firstInput+=1 }
+      });
+    }, 1000);
+  }
+
   render() {
+    name = this.props.name + " Xioumi " + this.state.firstInput;
     return (
-      <Text>Hellou {this.props.name} {this.props.age} !</Text>
+      <Text>Hellou {name} {this.props.age} !</Text>
     );
   }
 }
