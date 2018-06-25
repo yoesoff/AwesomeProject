@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Text, TextInput, View, Button, Alert} from 'react-native';
 
 class TextViewer extends Component {
     constructor(props) {
@@ -18,6 +18,13 @@ class TextViewer extends Component {
           <Text style={{padding: 10, fontSize: 42}}>
             {this.state.xxx + '🍕'}
           </Text>
+
+          <Button
+            onPress={() => {
+              Alert.alert(this.state.xxx);
+            }}
+            title="Press Me"
+          />
         </View>
       );
     }
